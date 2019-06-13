@@ -14,7 +14,7 @@ lose.textContent = loseCount;
 guess.textContent = i;
 answered.textContent = answerList;
 
-document.write(39);
+document.write(43);
 
 function generateRandomLetter() {
     var alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -35,8 +35,6 @@ function letsGo() {
         guess.textContent = i;
         answered.textContent = answerList;
     }
-
-
 }
 
 function compare() {
@@ -52,7 +50,7 @@ function compare() {
                 winCount++;
                 yourGuess.textContent = userGuess;
                 i--;
-                alert("You Win!");
+                alert("You Win!");               
             }
             else{
                 loseCount++;
@@ -61,8 +59,8 @@ function compare() {
                 alert("You Lose, Try Again.");
             }
 
-        if(i < 0){
-                alert("Game Over!");
+        if(i === 0){
+                reset();
             }
 
         generateRandomLetter();
@@ -72,10 +70,16 @@ function compare() {
         answered.textContent = answerList;
     }
 
-    //letsGo();     THIS CAUSES AN ENDLESS LOOP!
-
 }
 
-//generateRandomLetter();
+function reset(){
+    if(i === 0){
+        alert("Game Over!");
+        winCount = 0;
+        loseCount = 0;
+        i = 10;
+        answerList = [];
+    }
+}
+
 letsGo();
-//compare();
