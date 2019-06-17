@@ -14,8 +14,6 @@ lose.textContent = loseCount;
 guess.textContent = i;
 answered.textContent = answerList;
 
-document.write(43);
-
 function generateRandomLetter() {
     var alphabet = "abcdefghijklmnopqrstuvwxyz";
     letter = alphabet[Math.floor(Math.random() * alphabet.length)];
